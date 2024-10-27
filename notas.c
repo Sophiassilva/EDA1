@@ -6,7 +6,7 @@
 // não alocar nenhuma nova célula na sua função, apenas manipular os ponteiros dos nós de le para que estejam em l1 ou l2.
 // considerar que os nós cabeça l1 e l2 já foram alocados antes da chamada para a função relatorioMediaAtividades.
 
-Como consequência, a lista encabeçada por le não estará intacta após a chamada à sua função.
+// Como consequência, a lista encabeçada por le não estará intacta após a chamada à sua função.
 
 void relatorioMediaAtividades (celula *le, celula *l1, celula *l2, double media) {
     celula *a = NULL;
