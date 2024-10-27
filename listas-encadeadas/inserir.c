@@ -15,7 +15,6 @@ void insere_inicio (celula *le, int x){
 
 void insere_antes (celula *le, int x, int y){
     // insere dado x antes do elemento com dado y
-    celula *aux = malloc(sizeof(celula));
     celula *a = malloc(sizeof(celula));
     a->dado = x;
     int inseri = 0;
@@ -24,11 +23,10 @@ void insere_antes (celula *le, int x, int y){
         le = a;
         inseri = 1;
     } else {
-        while(le->prox != NULL){
-            aux = le;
+        while(le->prox){
             if (le->prox->dado == y) { // verifica sempre se o dado do prox for igual ao que queremos
                 a->prox = le->prox;
-                aux->prox = a;
+                le->prox = a;
                 inseri = 1;
                 break;
             }
@@ -36,16 +34,16 @@ void insere_antes (celula *le, int x, int y){
     }
     }
     if(!inseri) { // se não estiver na lista
-        for (aux = le; aux->prox != NULL; aux = aux->prox);
-        a->prox = aux->prox;
-        aux->prox = a;
+        for (le = le; le->prox; le = le->prox);
+        a->prox = le->prox;
+        le->prox = a;
     }
 }
 
 // void imprimir(celula *le) {
 //     celula *a;
 //     int i= 0;
-//     for (a = le->prox; a != NULL; a = a->prox) { // ignora a cabeça
+//     for (a = le->prox; a; a = a->prox) { // ignora a cabeça
 //         printf("--- CELULA %d ---\nDado: %d\nProx: %p\n", i, a->dado, a->prox);
 //         i++;
 //     }
