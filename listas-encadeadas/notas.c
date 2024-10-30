@@ -19,6 +19,31 @@ typedef struct celula {
   struct celula *prox;
 } celula;
 
+void insere_fim(célula *a, celula*b){
+    celula *aux = b;
+    for(; a; a = a->prox){
+        if(a->prox == NULL){
+            a->prox = aux;
+            a->prox->prox = NULL;
+            break;
+        }
+    }
+}
+
+void relatorioMediaAtividades (celula *le, celula *l1, celula *l2, double media){
+    celula *a = malloc(sizeof(celula));
+    le = le->prox;
+    while(le) {
+        a = le->prox;
+        if(le->mediaAtividades <= media) {
+            insere_fim(l1, le);
+        } else{
+            insere_fim(l2, le);
+        }
+        le = a;
+    }
+}
+
 // le -> {140164006, 10.0, 8.0} -> {160016169, 4.0, 2.0} -> {170062465, 9.5, 8.5} -> {190262661, 5.0, 7.0} -> NULL
 // relatorioMediaAtividades (le, l1, l2, 6.0)
 
