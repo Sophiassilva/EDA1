@@ -12,7 +12,7 @@ void imprime(celula *le){
         if(le->prox){
             printf("%d -> ", le->prox->dado);
         }else{
-            printf("NULL");
+            printf("NULL\n");
             terminei = 1;
         }
         le = le->prox;
@@ -24,7 +24,7 @@ void imprime_rec(celula *le){
         printf("%d -> ", le->prox->dado);
         imprime_rec(le->prox);
     }else{
-        printf("NULL");
+        printf("NULL\n");
     }
 }
 
