@@ -5,10 +5,6 @@
 // recebe uma lista encadeada com nó cabeça le e devolve duas listas encadeadas
 //com nós cabeça l1 e l2 de forma que todos os alunos na lista l1 possuem média de atividades menor ou igual à media 
 // e na lista l2, média de atividades maior que media.
-// não alocar nenhuma nova célula na sua função, apenas manipular os ponteiros dos nós de le para que estejam em l1 ou l2.
-// considerar que os nós cabeça l1 e l2 já foram alocados antes da chamada para a função relatorioMediaAtividades.
-
-// Como consequência, a lista encabeçada por le não estará intacta após a chamada à sua função.
 
 typedef struct celula {
   char matricula[10];
