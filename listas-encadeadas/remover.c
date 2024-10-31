@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// 100 pts
+
 typedef struct celula {
    int dado;
    struct celula *prox;
@@ -20,22 +22,16 @@ void remove_depois (celula *p) {
 }
 // Uma função que remove a primeira ocorrência de x da lista encadeada
 void remove_elemento (celula *le, int x){
-   if (le->dado == x){
-      le = le->prox;
-   } else {
       for(; le->prox; le = le->prox){
          if (le->prox->dado == x) {
             le->prox = le->prox->prox;
             break;
          }
       }
-   }
 }
 // Uma função que remove todas as ocorrências de x da lista encadeada
 void remove_todos_elementos (celula *le, int x) {
-   if(le->dado == x) {
-      le = le->prox;
-   }
+
    while(le->prox){
       if (le->prox->dado == x){
          remove_depois(le);
