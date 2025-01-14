@@ -19,14 +19,13 @@ void imprime(celula *le){
     } while(!terminei);
 }
 
-
-// l1 impar, l2 par
 void insere_fim(celula *dest, celula *source){
    celula *aux = source;
    for (; dest->prox; dest=dest->prox);
    dest->prox = aux;
    dest->prox->prox = NULL;
 }
+
 void divide_lista (celula *l, celula *l1, celula *l2){
    celula *aux = malloc(sizeof(celula));
    l = l->prox;

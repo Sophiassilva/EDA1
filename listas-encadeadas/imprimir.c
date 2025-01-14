@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// 100
+
 typedef struct celula {
    int dado;
    struct celula *prox;

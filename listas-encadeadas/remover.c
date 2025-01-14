@@ -32,7 +32,7 @@ void remove_elemento (celula *le, int x){
 // Uma função que remove todas as ocorrências de x da lista encadeada
 void remove_todos_elementos (celula *le, int x) {
 
-   while(le->prox){
+   while(le){
       if (le->prox->dado == x){
          remove_depois(le);
       } else {
